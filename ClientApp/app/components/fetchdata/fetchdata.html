@@ -1,0 +1,26 @@
+<template>
+    <h1>Meetings</h1>
+
+    <p>This component demonstrates fetching data from the server.</p>
+
+    <p if.bind="!meetings"><em>Loading...</em></p>
+
+    <table if.bind="meetings" class="table">
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Organizer</th>
+                <th>StartTime</th>
+                <th>EndTime</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr repeat.for="meeting of meetings">
+                <td>${ meeting.subject }</td>
+                <td>${ meeting.organizer }</td>
+                <td>${ meeting.startTime }</td>
+                <td>${ meeting.endTime }</td>
+            </tr>
+        </tbody>
+    </table>
+</template>
