@@ -12,6 +12,7 @@
                 <th>Organizer</th>
                 <th>StartTime</th>
                 <th>EndTime</th>
+                <th>Participants</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +21,22 @@
                 <td>${ meeting.organizer }</td>
                 <td>${ meeting.startTime }</td>
                 <td>${ meeting.endTime }</td>
+                <td>
+                    <table if.bind="meeting.participants" class="table">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Title</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr repeat.for="participant of meeting.participants">
+                            <td>${ participant.name }</td>
+                            <td>${ participant.title }</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
             </tr>
         </tbody>
     </table>

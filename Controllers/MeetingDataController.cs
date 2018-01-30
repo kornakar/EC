@@ -30,6 +30,13 @@ namespace AureliaCoreApp.Controllers
                 Organizer = Organizers[rng.Next(Organizers.Length)],
                 StartTime = DateTime.Now.AddHours(rng.Next(3)),
                 EndTime = DateTime.Now.AddHours(4 + rng.Next(3)),
+
+                Participants = new List<ParticipantModel>
+                               {
+                                   new ParticipantModel { Name = "Juho Röyhy", Title = "Art Director" },
+                                   new ParticipantModel { Name = "Petteri Lehtonen", Title = "UX Architect" },
+                                   new ParticipantModel { Name = "Tero Tapanainen", Title = "CTO" },
+                               }
             });
         }
 
