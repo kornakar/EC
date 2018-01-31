@@ -32,8 +32,8 @@ export class Fetchdata {
 interface Meeting {
     subject: string;
     organizer: number;
-    startTime: string;
-    endTime: string;
+    startTime: Date;
+    endTime: Date;
 
     participants: Participant[];
 }

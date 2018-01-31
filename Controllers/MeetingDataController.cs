@@ -18,8 +18,8 @@ namespace AureliaCoreApp.Controllers
                        {
                            Subject = "eCraft Management Monthly Meeting",
                            Organizer = "Ville Hemmilä",
-                           StartTime = "7:30",
-                           EndTime = "8:30",
+                           StartTime = new DateTime(2018, 03, 03, 07, 30, 00),
+                           EndTime = new DateTime(2018, 03, 03, 08, 30, 00),
 
                            Participants = new List<ParticipantModel>
                                           {
@@ -33,8 +33,8 @@ namespace AureliaCoreApp.Controllers
                        {
                            Subject = "Jooses Design workshop",
                            Organizer = "Joose Rautemaa",
-                           StartTime = "9:30",
-                           EndTime = "10:30",
+                           StartTime = new DateTime(2018, 03, 03, 09, 30, 00),
+                           EndTime = new DateTime(2018, 03, 03, 10, 30, 00),
 
                            Participants = new List<ParticipantModel>()
                        },
@@ -43,8 +43,8 @@ namespace AureliaCoreApp.Controllers
                        {
                            Subject = "Joose goes sickbr0",
                            Organizer = "Joose Rautemaa",
-                           StartTime = "10:30",
-                           EndTime = "11:30",
+                           StartTime = new DateTime(2018, 03, 03, 10, 30, 00),
+                           EndTime = new DateTime(2018, 03, 03, 11, 30, 00),
 
                            Participants = new List<ParticipantModel>()
                        },
@@ -53,8 +53,8 @@ namespace AureliaCoreApp.Controllers
                        {
                            Subject = "Nousiainen Inspection",
                            Organizer = "Joose Rautemaa",
-                           StartTime = "11:30",
-                           EndTime = "13:30",
+                           StartTime = new DateTime(2018, 03, 03, 11, 30, 00),
+                           EndTime = new DateTime(2018, 03, 03, 13, 30, 00),
 
                            Participants = new List<ParticipantModel>()
                        },
@@ -66,8 +66,8 @@ namespace AureliaCoreApp.Controllers
         {
             public string Subject { get; set; }
             public string Organizer { get; set; }
-            public string StartTime { get; set; }
-            public string EndTime { get; set; }
+            public DateTime StartTime { get; set; }
+            public DateTime EndTime { get; set; }
 
             public IList<ParticipantModel> Participants { get; set; }
         }

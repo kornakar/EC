@@ -17,8 +17,8 @@ export class Hourview {
 interface Meeting {
     subject: string;
     organizer: number;
-    startTime: number;
-    endTime: string;
+    startTime: Date;
+    endTime: Date;
 
     participants: Participant[];
 }

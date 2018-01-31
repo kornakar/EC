@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\app\components\fetchdata\hoursOnlyConverter.ts" />
+    <None Remove="ClientApp\app\components\fetchdata\TimeOnlyValueConverter.ts" />
     <None Remove="ClientApp\app\components\hourview\hourview.ts" />
     <None Remove="ClientApp\app\components\meetingitem\meetingitem.ts" />
   </ItemGroup>
@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\app\components\fetchdata\hoursOnlyConverter.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\fetchdata\TimeOnlyValueConverter.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\hourview\hourview.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\meetingitem\meetingitem.ts" />
   </ItemGroup>
