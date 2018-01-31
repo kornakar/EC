@@ -13,6 +13,25 @@ export class Fetchdata {
             });
     }
 
+    get currentMeetingProgress(): number {
+        if (this.meetings == null) {
+            return 0;
+        }
+
+        if (this.meetings.length === 0) {
+            return 0;
+        }
+
+        var meetingLength = this.meetings[0].endTime.valueOf() - this.meetings[0].startTime.valueOf();
+        var meetingElapsed = this.meetings[0].endTime.valueOf() - Date.now().valueOf();
+
+        if (meetingElapsed < 0) {
+            meetingElapsed = meetingLength;
+        }
+
+        return (meetingLength / meetingElapsed) * 100;
+    }
+
     // TODO: palauta oletus jos ei ole meetingejä?
     // TODO: error: this.meetings is undefined?
     get currentMeeting(): Meeting {

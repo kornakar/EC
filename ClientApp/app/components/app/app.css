@@ -61,3 +61,23 @@
     font-size: 90%;
     margin: 4px;
 }
+
+/* progress bar */
+.progress-custom {
+    display: table;
+    width: 50%;
+    margin-bottom: 20px; /*optionally same as the margin bottom of progress class*/
+}
+
+.progress-custom .progress {
+    margin-bottom: 0;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.progress-custom .progress-value {
+    display: table-cell;
+    vertical-align: middle;
+    width: 1%;
+    padding: 0 4px; /*optionally*/
+}

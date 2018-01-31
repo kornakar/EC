@@ -10,10 +10,24 @@
             </div>
 
             <h1>${ meetings[0].subject }</h1>
+            
+            <!-- TODO: ei näy? -->
+            <div id="meetingprogress" class="progress-custom center-block" style="height: 2px;">
+                <div class="progress-value">
+                    ${meetings[0].startTime | timeOnly}
+                </div>
+
+                <div class="progress-bar" role="progressbar" valuenow="70" valuemin="0" valuemax="100" style="width: 30%; color: #fc0;">
+                </div>
+
+                <div class="progress-value">
+                    ${meetings[0].endTime | timeOnly}
+                </div>
+            </div>
 
             <p>${ meetings[0].organizer }</p>
         </div>
-
+        
         <div id="meetingsfooter" class="">
             <p if.bind="!meetings"><em>Loading...</em></p>
 
