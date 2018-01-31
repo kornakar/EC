@@ -9,43 +9,65 @@ namespace AureliaCoreApp.Controllers
     [Route("api/[controller]")]
     public class MeetingDataController : Controller
     {
-        private static string[] Subjects = 
-        {
-            "eCraft Management Monthly Meeting", "Jooses Design workshop", "Joose goes sickbr0", "Nousiainen Inspection"
-        };
-
-        private static string[] Organizers = 
-        {
-            "Ville Hemmilä", "Joose Rautemaa",
-        };
-
         [HttpGet("[action]")]
         public IEnumerable<MeetingModel> Meetings()
         {
-            var rng = new Random();
+            return new List<MeetingModel>
+                   {
+                       new MeetingModel
+                       {
+                           Subject = "eCraft Management Monthly Meeting",
+                           Organizer = "Ville Hemmilä",
+                           StartTime = "7:30",
+                           EndTime = "8:30",
 
-            return Enumerable.Range(1, Subjects.Length).Select(index => new MeetingModel
-            {
-                Subject = Subjects[rng.Next(Subjects.Length)],
-                Organizer = Organizers[rng.Next(Organizers.Length)],
-                StartTime = DateTime.Now.AddHours(rng.Next(3)),
-                EndTime = DateTime.Now.AddHours(4 + rng.Next(3)),
+                           Participants = new List<ParticipantModel>
+                                          {
+                                              new ParticipantModel {Name = "Juho Röyhy", Title = "Art Director"},
+                                              new ParticipantModel {Name = "Petteri Lehtonen", Title = "UX Architect"},
+                                              new ParticipantModel {Name = "Tero Tapanainen", Title = "CTO"},
+                                          }
+                       },
 
-                Participants = new List<ParticipantModel>
-                               {
-                                   new ParticipantModel { Name = "Juho Röyhy", Title = "Art Director" },
-                                   new ParticipantModel { Name = "Petteri Lehtonen", Title = "UX Architect" },
-                                   new ParticipantModel { Name = "Tero Tapanainen", Title = "CTO" },
-                               }
-            });
+                       new MeetingModel
+                       {
+                           Subject = "Jooses Design workshop",
+                           Organizer = "Joose Rautemaa",
+                           StartTime = "9:30",
+                           EndTime = "10:30",
+
+                           Participants = new List<ParticipantModel>()
+                       },
+
+                       new MeetingModel
+                       {
+                           Subject = "Joose goes sickbr0",
+                           Organizer = "Joose Rautemaa",
+                           StartTime = "10:30",
+                           EndTime = "11:30",
+
+                           Participants = new List<ParticipantModel>()
+                       },
+
+                       new MeetingModel
+                       {
+                           Subject = "Nousiainen Inspection",
+                           Organizer = "Joose Rautemaa",
+                           StartTime = "11:30",
+                           EndTime = "13:30",
+
+                           Participants = new List<ParticipantModel>()
+                       },
+                   };
         }
 
+        // NOTE: starttime ja endtime stringejä koska moment ei asentunut --> ei voi tehdä konverteria
         public class MeetingModel
         {
             public string Subject { get; set; }
             public string Organizer { get; set; }
-            public DateTime StartTime { get; set; }
-            public DateTime EndTime { get; set; }
+            public string StartTime { get; set; }
+            public string EndTime { get; set; }
 
             public IList<ParticipantModel> Participants { get; set; }
         }

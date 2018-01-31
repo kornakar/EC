@@ -1,8 +1,8 @@
-import { HttpClient } from 'aurelia-fetch-client';
+ï»¿import { HttpClient } from 'aurelia-fetch-client';
 import { inject } from 'aurelia-framework';
 
 @inject(HttpClient)
-export class Fetchdata {
+export class Hourview {
     public meetings: Meeting[];
 
     constructor(http: HttpClient) {
@@ -12,27 +12,12 @@ export class Fetchdata {
                 this.meetings = data;
             });
     }
-
-    // TODO: palauta oletus jos ei ole meetingejä?
-    // TODO: error: this.meetings is undefined?
-    get currentMeeting(): Meeting {
-        //if (this.meetings.length > 0) {
-            return this.meetings[0];
-        //} else {
-           // ??
-        //}
-    }
-
-    // TODO: jos on alle 3 meetings?
-    get upcomingMeetings(): Meeting[] {
-        return this.meetings.slice(0, 3);
-    }
 }
 
 interface Meeting {
     subject: string;
     organizer: number;
-    startTime: string;
+    startTime: number;
     endTime: string;
 
     participants: Participant[];

@@ -1,0 +1,14 @@
+﻿<template>
+    <h1>Conference room</h1>
+
+    <p if.bind="!meetings"><em>Loading...</em></p>
+
+    <table if.bind="meetings" class="table">
+        <tbody>
+        <tr repeat.for="meeting of meetings">
+            <td>${ meeting.subject }</td>
+            <td>${ meeting.organizer }</td>
+        </tr>
+        </tbody>
+    </table>
+</template>

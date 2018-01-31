@@ -4,3 +4,60 @@
         padding-top: 50px;
     }
 }
+
+.meeting-body {
+    background-image: url("bg-image.jpg");
+    background-color: #cccccc;
+    color: #ffffff;
+}
+
+.fetchdata {
+    background-image: url("bg-image.jpg");
+    background: #000;
+    color: #ffffff;
+}
+
+#meetingsfooter { 
+    background: #000;
+}
+
+/* https://stackoverflow.com/questions/19215119/multiple-lines-in-a-horizontally-floated-list-item */
+#meetinglist li
+{
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 20px;
+}
+
+#meetinglist ul li:before {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#meetinglist ul li {
+    display: inline;
+    --text-transform: uppercase;
+    min-height: 22px;
+}
+
+#meetinglist ul li span.starttime {
+    display: block;
+    color: #fff;
+    font-size: 90%;
+    margin: 4px;
+}
+
+#meetinglist ul li span.subject {
+    display: block;
+    color: #fff;
+    font-size: 100%;
+    font-weight: bold;
+    margin: 4px;
+}
+
+#meetinglist ul li span.organizer {
+    display: block;
+    color: #fff;
+    font-size: 90%;
+    margin: 4px;
+}

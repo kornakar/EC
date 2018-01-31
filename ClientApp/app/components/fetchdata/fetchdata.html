@@ -1,43 +1,67 @@
 <template>
-    <h1>Meetings</h1>
+    <section class="fetchdata">
+        <div class="panel-body text-uppercase text-center">
+            <p>Current meeting</p>
 
-    <p>This component demonstrates fetching data from the server.</p>
+            <div class="center-block" style="width: 50px;">
+                <hr />
+            </div>
 
-    <p if.bind="!meetings"><em>Loading...</em></p>
+            <h1>${ meetings[0].subject }</h1>
 
-    <table if.bind="meetings" class="table">
+            <p>${ meetings[0].organizer }</p>
+        </div>
+
+        <div id="meetingsfooter" class="panel-footer">
+            <p if.bind="!meetings"><em>Loading...</em></p>
+
+            <ul id="meetinglist" if.bind="meetings">
+                <li repeat.for="meeting of meetings.slice(1, meetings.length)">
+                    <ul>
+                        <li>
+                            <span class="starttime">${meeting.startTime} - ${meeting.endTime}</span>
+                            <span class="subject">${meeting.subject}</span>
+                            <span class="organizer">${meeting.organizer}</span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!--<table if.bind="meetings" class="table">
         <thead>
-            <tr>
-                <th>Subject</th>
-                <th>Organizer</th>
-                <th>StartTime</th>
-                <th>EndTime</th>
-                <th>Participants</th>
-            </tr>
+        <tr>
+            <th>Subject</th>
+            <th>Organizer</th>
+            <th>StartTime</th>
+            <th>EndTime</th>
+            <th>Participants</th>
+        </tr>
         </thead>
         <tbody>
-            <tr repeat.for="meeting of meetings">
-                <td>${ meeting.subject }</td>
-                <td>${ meeting.organizer }</td>
-                <td>${ meeting.startTime }</td>
-                <td>${ meeting.endTime }</td>
-                <td>
-                    <table if.bind="meeting.participants" class="table">
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Title</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr repeat.for="participant of meeting.participants">
-                            <td>${ participant.name }</td>
-                            <td>${ participant.title }</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
+        <tr repeat.for="meeting of meetings">
+            <td>${ meeting.subject }</td>
+            <td>${ meeting.organizer }</td>
+            <td>${ meeting.startTime }</td>
+            <td>${ meeting.endTime }</td>
+            <td>
+                <table if.bind="meeting.participants" class="table">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Title</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr repeat.for="participant of meeting.participants">
+                        <td>${ participant.name }</td>
+                        <td>${ participant.title }</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
         </tbody>
-    </table>
+    </table>-->
+    </section>
 </template>
