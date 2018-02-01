@@ -17,12 +17,17 @@ body {
 
 .fetchdata {
     background-image: url("bg-image.jpg");
-    background: #000;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #ffffff;
 }
 
-#meetingsfooter { 
-    background: #000;
+#meetingsfooter {
+    padding:5px;
+    padding-top:20px;
+    border-top: solid 1px #033;;
+    background: rgba(0, 32, 32, 0.2);
+    color: #fff;
 }
 
 /* https://stackoverflow.com/questions/19215119/multiple-lines-in-a-horizontally-floated-list-item */
@@ -39,30 +44,35 @@ body {
 }
 
 #meetinglist ul li {
-    display: inline;
+    display: inline-block;
     min-height: 22px;
 }
 
 #meetinglist ul li span.starttime {
     display: block;
     color: #fff;
-    font-size: 90%;
+    font-size: 80%;
     margin: 4px;
+    color:#aaa;
 }
 
 #meetinglist ul li span.subject {
     display: block;
     color: #fff;
     font-size: 100%;
-    font-weight: bold;
+    font-weight:bolder;
     margin: 4px;
+    margin-bottom: 2px;
 }
 
 #meetinglist ul li span.organizer {
     display: block;
     color: #fff;
-    font-size: 90%;
+    font-size: 80%;
     margin: 4px;
+    margin-top:0px;
+    text-transform: uppercase;
+    color: #aaa;
 }
 
 /* MEETING DETAILS */

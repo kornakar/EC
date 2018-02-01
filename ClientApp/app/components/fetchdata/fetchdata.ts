@@ -53,9 +53,9 @@ export class Fetchdata {
             return new Array<Meeting>(0);
         }
 
-        var returnedMeetings = this.meetings.length > this.maxMeetings ? this.maxMeetings : this.meetings.length;
+        var returnedMeetings = this.meetings.length - 1 > this.maxMeetings ? this.maxMeetings : this.meetings.length;
 
-        return this.meetings.slice(0, returnedMeetings);
+        return this.meetings.slice(1, returnedMeetings);
     }
 }
 
