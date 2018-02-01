@@ -1,6 +1,8 @@
 <template>
     <require from="./TimeOnlyValueConverter"></require>
 
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
     <section class="fetchdata">
         <div class="text-uppercase text-center">
             <p>Current meeting</p>
@@ -10,7 +12,7 @@
             </div>
 
             <h1>${ meetings[0].subject }</h1>
-            
+
             <!-- TODO: ei näy? -->
             <div id="meetingprogress" class="progress-custom center-block" style="height: 2px;">
                 <div class="progress-value">
@@ -27,12 +29,12 @@
 
             <p>${ meetings[0].organizer }</p>
         </div>
-        
+
         <div id="meetingsfooter" class="">
             <p if.bind="!meetings"><em>Loading...</em></p>
 
             <ul id="meetinglist" if.bind="meetings">
-                <li repeat.for="meeting of meetings.slice(1, meetings.length)">
+                <li repeat.for="meeting of upcomingMeetings">
                     <ul>
                         <li>
                             <span class="starttime">${meeting.startTime | timeOnly} - ${meeting.endTime | timeOnly}</span>

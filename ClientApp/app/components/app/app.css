@@ -5,6 +5,10 @@
     }
 }
 
+body { 
+    font-family:Lato;
+}
+
 .meeting-body {
     background-image: url("bg-image.jpg");
     background-color: #cccccc;
@@ -36,7 +40,6 @@
 
 #meetinglist ul li {
     display: inline;
-    --text-transform: uppercase;
     min-height: 22px;
 }
 
@@ -62,6 +65,68 @@
     margin: 4px;
 }
 
+/* MEETING DETAILS */
+
+#meetingdetails img {
+    margin-right: 10px;
+}
+
+#meetingdetails li {
+    text-align: left;
+    vertical-align: central;
+    display: block;
+    list-style-type: none;
+    padding: 15px;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+}
+
+#meetingdetails ul li:before {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
+
+#meetingdetails ul li {
+    display: inline;
+    min-height: 22px;
+    border: none;
+    padding: 5px;
+}
+
+#meetingdetails ul li span.name {
+    display: block;
+    color: #777;
+    font-size: 100%;
+    font-weight: bold;
+    margin: 4px;
+}
+
+#meetingdetails ul li span.title {
+    display: block;
+    color: #aaa;
+    font-size: 90%;
+    margin: 4px;
+}
+
+#meeting-title {
+    text-align: left;
+    display: block;
+    list-style-type: none;
+    border: 1px solid #ccc;
+    background: #fc0;
+    padding: 0px;
+}
+
+#meeting-back-arrow {
+    font-size:300%;
+    color: #eee;
+    vertical-align:central;
+    padding-right: 20px;
+}
+
+/* MEETING DETAILS */
+
 /* progress bar */
 .progress-custom {
     display: table;
@@ -81,3 +146,172 @@
     width: 1%;
     padding: 0 4px; /*optionally*/
 }
+/* progress bar */
+
+/* CALENDAR GRID: https://bootsnipp.com/snippets/nr33z */
+
+.grid-header {
+    background-color: #aaa;
+    background-size: 34px;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    box-shadow: 0 0 3px 0;
+    position: fixed;
+    top: 43px;
+    display: block;
+    z-index: 1035;
+}
+
+.grid-header-labels {
+    padding-left: 60px;
+}
+
+.grid-header-label {
+    width: 120px;
+    float: left;
+    padding: 10px 5px;
+    height: 40px;
+    text-align: center;
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+    position: relative;
+}
+
+.grid-header-label-divider {
+    border-right: 1px solid #cbcbcb;
+    position: static;
+    right: 0;
+    bottom: 0;
+    height: 22px;
+}
+
+.grid-header-clock {
+    text-align: left;
+    background-color: #aaa;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    font-size: 40px;
+}
+
+.grid-body {
+    position: absolute;
+    top: 40px !important;
+    background: #f7f7f7;
+}
+
+.ui-block {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.grid-times-holder {
+    position: absolute;
+    overflow: hidden;
+    width: 60px;
+    top: 0;
+    display: block;
+    z-index: 200;
+    border-right: 1px solid #ddd;
+    background: #eee;
+    text-align: center;
+}
+
+.grid-date-holder {
+    position: absolute;
+    overflow: hidden;
+    left: 60px;
+    top: 0px;
+    display: block;
+    z-index: 200;
+    border-right: 1px solid #ddd;
+    background: #eee;
+    text-align: center;
+}
+
+.day-label {
+    height: 24px;
+    line-height: 25px;
+    border-bottom: 1px solid #a6a8ab;
+    color: #57585a;
+    background-color: #CBCBCB;
+}
+
+.grid-time-label {
+    height: 50px;
+    top: 10px;
+    line-height: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-left: 0;
+}
+
+.grid-times {
+}
+
+.grid-body-labels {
+    padding-left: 0px;
+}
+
+.grid-body-cell {
+    width: 110px;
+    float: left;
+    padding: 10px 5px;
+    height: 50px;
+    line-height: 49px;
+    border-bottom: 1px solid #ddd;
+    padding-left: 0;
+    text-align: center;
+    color: #fff;
+    background-color: #fff;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #ddd;
+}
+
+.grid-sessions {
+    position: relative;
+    min-width: 100%;
+}
+
+.grid-sessions-day {
+    position: relative;
+    height: 1525px;
+    min-width: 100%;
+}
+
+.grid-session-cell {
+    position: absolute;
+    width: 118px;
+    overflow: hidden;
+    border: 1px solid #bbb;
+    font-size: 12px;
+    cursor: pointer;
+    background: #fff;
+    color: #000;
+    font-family: sans-serif;
+}
+
+.grid-session-icon {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 24px;
+}
+
+.grid-session-title {
+    padding: 9px;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+.grid-session-time {
+    padding: 9px;
+}
+
+/* CALENDAR GRID */

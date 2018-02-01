@@ -1,3 +1,47 @@
 ﻿<template>
-    <p>${}</p>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
+    <require from="../fetchdata/TimeOnlyValueConverter"></require>
+    <require from="./DateWithWeekdayValueConverter"></require>
+    
+    <div class="text-uppercase">
+        <ul id="meetingdetails">
+            <li id="meeting-title">
+                <span id="meeting-back-arrow">&lt;</span> ${meeting.subject}
+            </li>
+
+            <li>
+                <img src="../../icons/time.png" />
+                ${meeting.startTime | dateWithWeekday}
+            </li>
+
+            <li>
+                <img src="../../icons/time.png" />
+                ${meeting.startTime | timeOnly} to ${meeting.endTime | timeOnly}
+            </li>
+
+            <li id="meetingparticipants">
+                <img src="../../icons/person.png" />
+
+                Participants
+
+                <ul repeat.for="participant of meeting.participants">
+                    <li>
+                        <span class="name"> ${participant.name}</span>
+                        <span class="title"> ${participant.title}</span>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <img src="../../icons/description.png" />
+
+                Description
+
+                <div class="">
+                    ${meeting.description}
+                </div>
+            </li>
+        </ul>
+    </div>
 </template>

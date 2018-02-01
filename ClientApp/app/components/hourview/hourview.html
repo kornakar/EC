@@ -1,7 +1,16 @@
 ﻿<template>
-    <h1>Conference room</h1>
+    <require from="../fetchdata/TimeOnlyValueConverter"></require>
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 
-    <p if.bind="!meetings"><em>Loading...</em></p>
+    <div class="ui-block">
+        <div class="panel-body">
+            <h1>Conference room</h1>
+        </div>
+    </div>
+
+
+    <!--<p if.bind="!meetings"><em>Loading...</em></p>
 
     <table if.bind="meetings" class="table">
         <tbody>
@@ -10,5 +19,28 @@
             <td>${ meeting.organizer }</td>
         </tr>
         </tbody>
-    </table>
+    </table>-->
+    <!--<div class="body-content" repeat.for="hour of 9">
+        <span>${hour + 8}:00</span>
+    </div>-->
+    
+    <div id="gridBody" class="ui-block">
+        <div id="gridTimesHolder" class="grid-times-holder" style="left:inherit">
+            <div class="grid-times" repeat.for="hour of 9">
+                <div class="grid-time-label">${hour + 8}:00</div>
+            </div>
+        </div>
+
+        <div class="grid-sessions" style="height: 500px">
+            <div class="grid-sessions-day" style="overflow: visible; width: 200px">
+                <div repeat.for="meeting of meetings">
+                    <div class="grid-session-cell" style="top:300px; height:50px; left:100px; width:150px;">
+                        <!--<i class="grid-session-icon" ng-class="event.eventtype"></i>-->
+                        <div class="grid-session-title">${meeting.subject}</div>
+                        <div class="grid-session-time">${meeting.startTime | timeOnly}-${meeting.endTime | timeOnly}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>

@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <None Remove="ClientApp\app\components\fetchdata\TimeOnlyValueConverter.ts" />
-    <None Remove="ClientApp\app\components\hourview\hourview.ts" />
+    <None Remove="ClientApp\app\components\meetingitem\DateWithWeekdayValueConverter.ts" />
     <None Remove="ClientApp\app\components\meetingitem\meetingitem.ts" />
   </ItemGroup>
 
@@ -27,8 +27,20 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\components\fetchdata\TimeOnlyValueConverter.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\hourview\hourview.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\meetingitem\meetingitem.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\meetingitem\meetingitem.ts">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\app\components\meetingitem\DateWithWeekdayValueConverter.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ClientApp\app\components\hourview\hourview.ts">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\app\icons\" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

@@ -4,6 +4,7 @@ import { inject } from 'aurelia-framework';
 @inject(HttpClient)
 export class Fetchdata {
     public meetings: Meeting[];
+    private maxMeetings: number = 3;
 
     constructor(http: HttpClient) {
         http.fetch('api/MeetingData/Meetings')
@@ -35,29 +36,39 @@ export class Fetchdata {
     // TODO: palauta oletus jos ei ole meetingejä?
     // TODO: error: this.meetings is undefined?
     get currentMeeting(): Meeting {
-        //if (this.meetings.length > 0) {
+        if (this.meetings == null) {
+            return new Meeting();
+        }
+
+        if (this.meetings.length > 0) {
             return this.meetings[0];
-        //} else {
-           // ??
-        //}
+        } else {
+            return new Meeting();
+        }
     }
 
     // TODO: jos on alle 3 meetings?
     get upcomingMeetings(): Meeting[] {
-        return this.meetings.slice(0, 3);
+        if (this.meetings == null) {
+            return new Array<Meeting>(0);
+        }
+
+        var returnedMeetings = this.meetings.length > this.maxMeetings ? this.maxMeetings : this.meetings.length;
+
+        return this.meetings.slice(0, returnedMeetings);
     }
 }
 
-interface Meeting {
+class Meeting {
     subject: string;
-    organizer: number;
+    organizer: string;
     startTime: Date;
     endTime: Date;
 
     participants: Participant[];
 }
 
-interface Participant {
+class Participant {
     name: string;
     title: string;
 }

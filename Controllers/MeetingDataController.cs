@@ -10,6 +10,25 @@ namespace AureliaCoreApp.Controllers
     public class MeetingDataController : Controller
     {
         [HttpGet("[action]")]
+        public MeetingModel Meeting()
+        {
+            return new MeetingModel
+                   {
+                       Subject = "Jooses Design workshop",
+                       Organizer = "Joose Rautemaa",
+                       StartTime = new DateTime(2018, 03, 03, 09, 30, 00),
+                       EndTime = new DateTime(2018, 03, 03, 10, 30, 00),
+
+                        Participants = new List<ParticipantModel>
+                                      {
+                                          new ParticipantModel {Name = "Juho Röyhy", Title = "Art Director"},
+                                          new ParticipantModel {Name = "Petteri Lehtonen", Title = "UX Architect"},
+                                          new ParticipantModel {Name = "Tero Tapanainen", Title = "CTO"},
+                                      }
+                   };
+        }
+
+        [HttpGet("[action]")]
         public IEnumerable<MeetingModel> Meetings()
         {
             return new List<MeetingModel>
