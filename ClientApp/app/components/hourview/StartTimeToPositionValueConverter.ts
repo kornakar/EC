@@ -4,6 +4,6 @@
         var hours = date.getHours() - 8;
 
         // hax
-        return 100 + hours * 84 + date.getMinutes();
+        return 90 + hours * 84 + (date.getMinutes() / 60) * 84;;
     }
 }

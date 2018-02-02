@@ -5,7 +5,11 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 
-    <div class="text-uppercase">
+    <div class="hour-line" css="top:${currentTime | startTimeToPosition}px">
+
+    </div>
+
+    <div class="text-uppercase" style="background:#fff; position:absolute; z-index:1; width:100%">
         <div id="conference-title">
             <p>Conference room</p>
         </div>
@@ -13,13 +17,6 @@
         <div id="room-title">
             <p>Kesä today</p>
         </div>
-    </div>
-
-    <div class="header-fade">
-    </div>
-    
-    <div class="hour-line" css="top:${currentTime | startTimeToPosition}px">
-
     </div>
 
     <div class="calendar-container">
@@ -41,5 +38,8 @@
             <br />
             <span class="meeting-organizer">${meeting.organizer}</span>
         </div>
+    </div>
+
+    <div class="header-fade">
     </div>
 </template>

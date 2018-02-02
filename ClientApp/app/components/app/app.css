@@ -213,6 +213,7 @@ body > div,
     height: 100%;
     width: 100%;
     background:#fff;
+    margin-top:75px;
 }
 
 .calendar-hours {
@@ -221,12 +222,12 @@ body > div,
     font-size:80%; 
     vertical-align:middle; 
     padding-right:20px; 
-    padding-left:20px
+    padding-left:20px;
 }
 
 .calendar-divider { 
     display:table-cell; 
-    width:100%
+    width:100%;
 }
 
 .header-fade { 
@@ -235,7 +236,8 @@ body > div,
     position:absolute;
     top:60px;
     left:60px;
-    width:100%
+    width:100%;
+    z-index:0;
 }
 
 .hour-line {

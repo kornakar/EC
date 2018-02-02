@@ -5,7 +5,7 @@
         var timeDiff = Math.abs(endTime.getTime() - startTime.getTime());
 
         // hax --> hours to px
-        return (Math.round(timeDiff / 60000) / 60) * 84;
+        return (Math.round(timeDiff / 60000) / 60) * 90;
     }
 }
 
