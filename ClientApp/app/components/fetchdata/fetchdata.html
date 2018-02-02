@@ -11,7 +11,7 @@
 
     <section class="fetchdata">
         <div id="meeting-main" class="text-uppercase text-center">
-            <div style="padding-bottom:20%; padding-top:20%; ">
+            <div id="meeting-container">
                 <p>Current meeting</p>
 
                 <div class="center-block" style="width: 25px; ">
@@ -20,20 +20,22 @@
 
                 <h1>${meetings[0].subject}</h1>
 
-                <!-- TODO: ei näy? -->
-                <div id="meetingprogress" class="progress-custom center-block" style="height: 200px; background: red;">
+                <!-- TODO: progressbar ei näy/väärässä paikassa? -->
+                <div id="meetingprogress" class="progress-custom center-block">
                     <div class="progress-value">
                         ${meetings[0].startTime | timeOnly}
                     </div>
 
-                    <div class="progress-bar" role="progressbar" valuenow="70" valuemin="0" valuemax="100" style="width: 30%; color: #fc0;">
-                        foo
+                    <div class="progress progress-custom">
+                        <div class="progress-bar" css="width: ${currentMeetingProgress}%" style="background-color: #fc0;" role="progressbar" valuenow="70" valuemin="0" valuemax="100">
+                            <!--${currentMeetingProgress}-->
+                        </div>
                     </div>
-
                     <div class="progress-value">
                         ${meetings[0].endTime | timeOnly}
                     </div>
                 </div>
+                
 
                 <p>${meetings[0].organizer}</p>
             </div>

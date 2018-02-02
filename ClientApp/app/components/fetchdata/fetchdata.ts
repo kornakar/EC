@@ -23,18 +23,20 @@ export class Fetchdata {
             return 0;
         }
 
-        var meetingLength = this.meetings[0].endTime.valueOf() - this.meetings[0].startTime.valueOf();
-        var meetingElapsed = this.meetings[0].endTime.valueOf() - Date.now().valueOf();
+        // NOTE: testiksi
+        var dateNow = new Date(2018, 3, 3, 8, 0, 0);
 
-        if (meetingElapsed < 0) {
-            meetingElapsed = meetingLength;
+        if (this.meetings[0].startTime < dateNow || this.meetings[0].endTime > dateNow) {
+            return 0;
         }
 
-        return (meetingLength / meetingElapsed) * 100;
+        // startTime.getTime() is not a function??
+        //return Math.round(dateNow.getTime() - this.meetings[0].startTime.getTime()) /
+        //    Math.round((this.meetings[0].endTime.getTime() - this.meetings[0].startTime.getTime()));
+
+        return 30;
     }
 
-    // TODO: palauta oletus jos ei ole meetingejä?
-    // TODO: error: this.meetings is undefined?
     get currentMeeting(): Meeting {
         if (this.meetings == null) {
             return new Meeting();
@@ -47,7 +49,6 @@ export class Fetchdata {
         }
     }
 
-    // TODO: jos on alle 3 meetings?
     get upcomingMeetings(): Meeting[] {
         if (this.meetings == null) {
             return new Array<Meeting>(0);
