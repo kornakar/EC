@@ -9,6 +9,12 @@ body {
     font-family:Lato;
 }
 
+html, body,
+body > div,
+.full-height {
+    height: 100%;
+}
+
 .meeting-body {
     background-image: url("bg-image.jpg");
     background-color: #cccccc;
@@ -22,6 +28,15 @@ body {
     color: #ffffff;
 }
 
+.fetchdata p { 
+    color:#bbb;
+}
+
+.fetchdata h1 {
+    font-size:350%;
+    font-kerning:auto;
+}
+
 #meetingsfooter {
     padding:5px;
     padding-top:20px;
@@ -30,9 +45,13 @@ body {
     color: #fff;
 }
 
+/* TODO: ei toimi? */
+#meeting-main { 
+    vertical-align:central;
+}
+
 /* https://stackoverflow.com/questions/19215119/multiple-lines-in-a-horizontally-floated-list-item */
-#meetinglist li
-{
+#meetinglist li {
     display: inline-block;
     list-style-type: none;
     padding-right: 20px;
@@ -98,25 +117,24 @@ body {
 }
 
 #meetingdetails ul li {
-    display: inline;
-    min-height: 22px;
+    min-height: 50px;
     border: none;
     padding: 5px;
 }
 
 #meetingdetails ul li span.name {
-    display: block;
-    color: #777;
+    color: #555;
     font-size: 100%;
     font-weight: bold;
     margin: 4px;
+    margin-bottom: 0px;
 }
 
 #meetingdetails ul li span.title {
-    display: block;
     color: #aaa;
-    font-size: 90%;
+    font-size: 80%;
     margin: 4px;
+    margin-top:0px;
 }
 
 #meeting-title {
@@ -137,11 +155,25 @@ body {
 
 /* MEETING DETAILS */
 
+#circle {
+    display:inline-block;
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 50%;
+    background: #eee;
+}
+
 /* progress bar */
+#meetingprogress { 
+    vertical-align:central;
+}
+
 .progress-custom {
     display: table;
     width: 50%;
-    margin-bottom: 20px; /*optionally same as the margin bottom of progress class*/
+    margin-bottom: 20px;
 }
 
 .progress-custom .progress {
@@ -154,7 +186,9 @@ body {
     display: table-cell;
     vertical-align: middle;
     width: 1%;
-    padding: 0 4px; /*optionally*/
+    color:#bbb;
+    padding: 0 4px;
+    font-size:110%;
 }
 /* progress bar */
 
@@ -325,3 +359,11 @@ body {
 }
 
 /* CALENDAR GRID */
+
+.calendar-container { 
+    height: 100%;
+    width: 100%;
+    background:red;
+}
+
+

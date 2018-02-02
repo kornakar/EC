@@ -11,29 +11,32 @@
 
     <section class="fetchdata">
         <div id="meeting-main" class="text-uppercase text-center">
-            <p>Current meeting</p>
+            <div style="padding-bottom:20%; padding-top:20%; ">
+                <p>Current meeting</p>
 
-            <div class="center-block" style="width: 50px;">
-                <hr/>
+                <div class="center-block" style="width: 25px; ">
+                    <hr />
+                </div>
+
+                <h1>${meetings[0].subject}</h1>
+
+                <!-- TODO: ei näy? -->
+                <div id="meetingprogress" class="progress-custom center-block" style="height: 200px; background: red;">
+                    <div class="progress-value">
+                        ${meetings[0].startTime | timeOnly}
+                    </div>
+
+                    <div class="progress-bar" role="progressbar" valuenow="70" valuemin="0" valuemax="100" style="width: 30%; color: #fc0;">
+                        foo
+                    </div>
+
+                    <div class="progress-value">
+                        ${meetings[0].endTime | timeOnly}
+                    </div>
+                </div>
+
+                <p>${meetings[0].organizer}</p>
             </div>
-
-            <h1>${ meetings[0].subject }</h1>
-
-            <!-- TODO: ei näy? -->
-            <div id="meetingprogress" class="progress-custom center-block" style="height: 2px;">
-                <div class="progress-value">
-                    ${meetings[0].startTime | timeOnly}
-                </div>
-
-                <div class="progress-bar" role="progressbar" valuenow="70" valuemin="0" valuemax="100" style="width: 30%; color: #fc0;">
-                </div>
-
-                <div class="progress-value">
-                    ${meetings[0].endTime | timeOnly}
-                </div>
-            </div>
-
-            <p>${ meetings[0].organizer }</p>
         </div>
 
         <div id="meetingsfooter" class="">

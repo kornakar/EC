@@ -25,10 +25,15 @@
 
                 Participants
 
-                <ul repeat.for="participant of meeting.participants">
-                    <li>
-                        <span class="name"> ${participant.name}</span>
-                        <span class="title"> ${participant.title}</span>
+                <ul>
+                    <li repeat.for="participant of meeting.participants">
+                       <span id="circle"></span>
+                        
+                        <div style="display:inline-block; position: relative; top: -10px; margin-left:10px;">
+                            <span class="name"> ${participant.name}</span>
+                            <br>
+                            <span class="title"> ${participant.title}</span>
+                        </div>
                     </li>
                 </ul>
             </li>
