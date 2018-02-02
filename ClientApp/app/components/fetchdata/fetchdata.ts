@@ -24,7 +24,7 @@ export class Fetchdata {
         }
 
         // NOTE: testiksi
-        var dateNow = new Date(2018, 3, 3, 8, 0, 0);
+        const dateNow = new Date(2018, 3, 3, 8, 0, 0);
 
         if (this.meetings[0].startTime < dateNow || this.meetings[0].endTime > dateNow) {
             return 0;
@@ -54,7 +54,7 @@ export class Fetchdata {
             return new Array<Meeting>(0);
         }
 
-        var returnedMeetings = this.meetings.length - 1 > this.maxMeetings ? this.maxMeetings : this.meetings.length;
+        const returnedMeetings = this.meetings.length - 1 > this.maxMeetings ? this.maxMeetings : this.meetings.length;
 
         return this.meetings.slice(1, returnedMeetings);
     }

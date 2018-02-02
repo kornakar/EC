@@ -1,9 +1,45 @@
 ﻿<template>
     <require from="../fetchdata/TimeOnlyValueConverter"></require>
-    
+    <require from="./MeetingToHeightValueConverter"></require>
+    <require from="./StartTimeToPositionValueConverter"></require>
+
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
+    <div class="text-uppercase">
+        <div id="conference-title">
+            <p>Conference room</p>
+        </div>
+
+        <div id="room-title">
+            <p>Kesä today</p>
+        </div>
+    </div>
+
+    <div class="header-fade">
+    </div>
     
-    <div class="calendar-container" data-time="930">
-        iha mitä vaan
+    <div class="hour-line" css="top:${currentTime | startTimeToPosition}px">
+
+    </div>
+
+    <div class="calendar-container">
+        <div repeat.for="hour of calendarTimes" style="display: table;">
+            <div class="calendar-hours">${hour | timeOnly}</div>
+
+            <div class="calendar-divider">
+                <hr />
+            </div>
+        </div>
+    </div>
+
+    <div repeat.for="meeting of meetings" class="meeting-box"
+         css="top:${meeting.startTime | startTimeToPosition}px;
+         height:${meeting | meetingToHeight}px; position:absolute;">
+
+        <div style="margin:2%">
+            <span class="meeting-subject">${meeting.subject}</span>
+            <br />
+            <span class="meeting-organizer">${meeting.organizer}</span>
+        </div>
     </div>
 </template>

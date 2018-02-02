@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <None Remove="ClientApp\app\components\fetchdata\TimeOnlyValueConverter.ts" />
+    <None Remove="ClientApp\app\components\hourview\MeetingToHeightValueConverter.ts" />
+    <None Remove="ClientApp\app\components\hourview\StartTimeToPositionValueConverter.ts" />
     <None Remove="ClientApp\app\components\meetingitem\DateWithWeekdayValueConverter.ts" />
     <None Remove="ClientApp\app\components\meetingitem\meetingitem.ts" />
   </ItemGroup>
@@ -27,6 +29,8 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\components\fetchdata\TimeOnlyValueConverter.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\hourview\MeetingToHeightValueConverter.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\hourview\StartTimeToPositionValueConverter.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\meetingitem\meetingitem.ts">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </TypeScriptCompile>
